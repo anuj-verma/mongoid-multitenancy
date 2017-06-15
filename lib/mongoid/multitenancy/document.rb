@@ -30,7 +30,7 @@ module Mongoid
         #   and :unshared.
         # @return [ Field ] The generated field
         def tenant(association = :account, options = {})
-          options = { full_indexes: true, immutable: true, scopes: true }.merge!(options)
+          options = { full_indexes: true, immutable: false, scopes: true }.merge!(options)
           assoc_options, multitenant_options = build_options(options)
 
           # Setup the association between the class and the tenant class
